@@ -18,17 +18,19 @@ for el in lst:
 print(lst1)
 print('')
 
-message = sub for sub in range(len(lst1):
-    if lst1[lst1.index(sub)] = '"':
-        if lst1[lst1.index(sub)+1][-1].isdigit():
-            print(lst1.index(sub))
-            lst1[lst1.index(sub):(lst1.index(sub) + 1)] = [''.join(lst1[lst1.index(sub):(lst1.index(sub) + 1)])]
-            message += sub
+message = ''
+for idx in range(len(lst1)-1):
+    sub = lst1[idx]
+    sub1 = lst1[idx+1]
+    if sub == '"':
+        if sub1[-1].isdigit():
+            # lst1[sub:sub1] = ''.join(lst1[sub:sub1])
+            message += f"{sub}"
             continue
-    elif lst1[lst1.index(sub)][-1].isdigit():
-        lst1[lst1.index(sub):(lst1.index(sub) + 1)] = [''.join(lst1[lst1.index(sub):(lst1.index(sub) + 1)])]
-        message += sub
+    elif sub[-1].isdigit():
+        # lst1[sub:sub1] = ''.join(lst1[sub:sub1])
+        message += f"{sub}"
         continue
     message += sub
-    message += " "
+    message += ' ' 
 print(message)
